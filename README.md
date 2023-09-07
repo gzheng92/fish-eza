@@ -101,6 +101,12 @@ Now that Exa is deprecated, all the shell variables it set are just clutter. I r
 for var in $(printenv | grep ^EXA | cut -d= -f1); set --universal --erase $var; end
 ```
 
+For a more complete solution, **first** uninstall `fish-exa`. Do this **before** installing `fish-eza`.
+
+```console
+fisher remove $(fisher list fish-exa)
+```
+
 ## 📝 License
 
 [MIT](https://github.com/Gazorby/fish-exa/blob/master/LICENSE)
