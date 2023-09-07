@@ -49,7 +49,7 @@ Any of these suffixes appended to any previous base alias is a valid alias too (
 
 Examples:
 
-```console
+```console no-copy
   la => --all --binary
         -------a------
 
@@ -92,6 +92,14 @@ You can define per alias options using an env variable named `EZA_<ALIAS>_OPTION
 For example, to customize `ll` specific options, you would store them in `EZA_LL_OPTIONS`
 
 Extended suffixes have their env variable as well : `EZA_<SUFFIX>_OPTIONS`.
+
+### Moving from Exa to Eza
+
+Now that Exa is deprecated, all the shell variables it set are just clutter. I removed them all using the following:
+
+```console
+for var in $(printenv | grep ^EXA | cut -d= -f1); set --universal --erase $var; end
+```
 
 ## 📝 License
 
